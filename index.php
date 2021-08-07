@@ -1,58 +1,71 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Login Register System</title>
-	<link rel="stylesheet" type="text/css" href="inc/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="inc/style.css">
-</head>
-
-<body>
-	<div class="container">
-<nav class="navbar navbar-default navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-          <a class="navbar-brand" href="#">Login Register System PHP & OOP</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-   
-      <ul class="nav navbar-nav navbar-right">
-      		<li>
-      		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Profile</b></a>
-      	</li>
-      		<li>
-      		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Logout</b></a>
-      	</li>
-      	<li>
-      		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Register</b></a>
-      	</li>
-        <li>
-        	
-        	  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b></a>
-        </li>
-       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</div>
+<?php
+	include 'inc/header.php';
+?>
 <div class="container">
-	<p>body text</p>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>User List <span class="pull-right">Wellcome</span><strong>Sofik</strong></h3>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+						<th width="20%">Serial</th>
+						<th width="20%">Name</th>
+						<th width="20%">UserName</th>
+						<th width="20%">Email</th>
+						<th width="20%">Action</th>
+						</tr>
+
+					
+					</thead>
+					<tbody>
+						<tr>
+							<td>01</td>
+						<td>Md Shafiqul Islam</td>
+						<td>Shafiqul</td>
+						<td>sofik@gmail.com</td>
+						<td>
+							<a class="btn btn-primary" href="">View</a>
+						</td>
+						</tr>
+
+							<tr>
+							<td>02</td>
+						<td>Md Rhafiqul Islam</td>
+						<td>Shafiqul</td>
+						<td>rofik@gmail.com</td>
+						<td>
+							<a class="btn btn-primary" href="">View</a>
+						</td>
+						</tr>
+
+							<tr>
+							<td>03</td>
+						<td>Md Shahidul Islam</td>
+						<td>Shahidul</td>
+						<td>sohid@gmail.com</td>
+						<td>
+							<a class="btn btn-primary" href="">View</a>
+						</td>
+						</tr>
+
+							<tr>
+							<td>04</td>
+						<td>Md Rakibul Islam</td>
+						<td>Rakibul</td>
+						<td>rakib@gmail.com</td>
+						<td>
+							<a class="btn btn-primary" href="">View</a>
+						</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
 </div>
 
-
-<div class="container">
-<div class="well well-sm">
-	<h3>Email:mdshafiqulislam822@gmail.com <p class="pull-right">Phone : +917430990829</p></h3>
-	
-</div>
-</div>
-
-<script type="text/javascript" src="inc/jquery.min.js"></script>
-<script type="text/javascript" src="inc/bootstrap.min.js"></script>
-</body>
-</html>
-
-
+<?php
+	include 'inc/footer.php';
+?>
