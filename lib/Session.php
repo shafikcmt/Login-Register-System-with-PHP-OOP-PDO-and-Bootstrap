@@ -1,5 +1,5 @@
 <?php
-class Database{
+class Session{
 	
 	function __construct()
 	{
