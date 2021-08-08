@@ -14,24 +14,24 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-          <a class="navbar-brand" href="#">Login Register System PHP & OOP</a>
+          <a class="navbar-brand" href="index.php">Login Register System PHP & OOP</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
    
       <ul class="nav navbar-nav navbar-right">
       		<li>
-      		  <a href="./index.php" class="dropdown-toggle" data-toggle="dropdown"><b>Profile</b></a>
+      		  <a href="profile.php">Profile</a>
       	</li>
       		<li>
-      		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Logout</b></a>
+      		  <a href="#">Logout</a>
       	</li>
       	<li>
-      		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Register</b></a>
+      		  <a href="register.php" >Register</a>
       	</li>
         <li>
         	
-        	  <a href="./login.php" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b></a>
+        	  <a href="login.php">Login</a>
         </li>
        </ul>
     </div><!-- /.navbar-collapse -->

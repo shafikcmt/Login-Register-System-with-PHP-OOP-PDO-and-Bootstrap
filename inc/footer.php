@@ -1,7 +1,7 @@
 
 <div class="container">
 <div class="well well-sm">
-	<h3>Email:mdshafiqulislam822@gmail.com <p class="pull-right">Phone : +917430990829</p></h3>
+	<h4>Email:mdshafiqulislam822@gmail.com <p class="pull-right">Whatsup : +917430990829</p></h4>
 	
 </div>
 </div>

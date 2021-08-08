@@ -26,7 +26,7 @@
 						<td>Shafiqul</td>
 						<td>sofik@gmail.com</td>
 						<td>
-							<a class="btn btn-primary" href="">View</a>
+							<a class="btn btn-primary" href="profile.php">View</a>
 						</td>
 						</tr>
 
