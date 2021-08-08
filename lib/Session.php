@@ -1,12 +1,9 @@
 <?php
-/**
- * 
- */
 class Database{
 	
-	function __construct(argument)
+	function __construct()
 	{
-		// code...
+		
 	}
 }
 ?>
