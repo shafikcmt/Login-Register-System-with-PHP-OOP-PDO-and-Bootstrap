@@ -47,10 +47,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update']))
 							
 							<div class="form-group">
 								<label></label>
-								
+								<?php
+									$sesid = Session::get("id");
+									if($userid == $sesid){
+								?>
 								<input type="submit" value="Update" class="btn btn-primary">
 							</div>
-							
+							<?php } ?>
 						</form>
 						<?php } ?>
 					</div>
