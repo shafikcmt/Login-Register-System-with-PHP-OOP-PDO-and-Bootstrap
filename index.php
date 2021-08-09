@@ -18,10 +18,10 @@ Session::set("loginmsg", NULL)
 			<div class="panel-heading">
 				<h3>User List <span class="pull-right"><strong>Wellcome!</strong>
 			<?php
-			$name = Session::get('name');
-			if(isset($name))
+			$name = Session::get('username');
+			if(isset($username))
 			{
-				echo $name;
+				echo $username;
 			}
 			?>
 			</span>
@@ -42,47 +42,34 @@ Session::set("loginmsg", NULL)
 					
 					</thead>
 					<tbody>
+					<?php
+                    $user = new User();
+                    $userdata = $user->getUserData();
+                    if($userdata){
+                        $i = 0;
+                        foreach($userdata as $sdata){
+                            $i++;
+                    ?>
 						<tr>
-							<td>01</td>
-						<td>Md Shafiqul Islam</td>
-						<td>Shafiqul</td>
-						<td>sofik@gmail.com</td>
-						<td>
-							<a class="btn btn-primary" href="profile.php">View</a>
-						</td>
+						<td><?php echo $i; ?></td>
+                       <td><?php echo $sdata['name']?></td>
+                       <td><?php echo $sdata['username']?></td>
+                       <td><?php echo $sdata['email']?></td>
+                       <td>
+                           <a class="btn btn-primary" href="profile.php?id=<?php echo $sdata['id']?>">View</a>
+                       </td>
 						</tr>
 
-							<tr>
-							<td>02</td>
-						<td>Md Rhafiqul Islam</td>
-						<td>Shafiqul</td>
-						<td>rofik@gmail.com</td>
-						<td>
-							<a class="btn btn-primary" href="">View</a>
-						</td>
-						</tr>
-
-							<tr>
-							<td>03</td>
-						<td>Md Shahidul Islam</td>
-						<td>Shahidul</td>
-						<td>sohid@gmail.com</td>
-						<td>
-							<a class="btn btn-primary" href="">View</a>
-						</td>
-						</tr>
-
-							<tr>
-							<td>04</td>
-						<td>Md Rakibul Islam</td>
-						<td>Rakibul</td>
-						<td>rakib@gmail.com</td>
-						<td>
-							<a class="btn btn-primary" href="">View</a>
-						</td>
-						</tr>
+					
 						
 					</tbody>
+					<?php } }else{ ?>
+                   <tr>
+                       <td colspan="5">
+                           <h2>No user Data Found.....</h2>
+                       </td>
+                   </tr>
+                <?php }?>
 				</table>
 			</div>
 		</div>

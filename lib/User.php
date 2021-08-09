@@ -101,5 +101,12 @@ class User{
         return $msg; 
     }
     }
+    public function getUserData(){
+        $sql = "SELECT * FROM table_user ORDER BY id DESC";
+         $query = $this->db->pdo->prepare($sql);
+         $query->execute();
+         $result = $query->fetchAll();
+         return $result; 
+     }
 }
 ?>
