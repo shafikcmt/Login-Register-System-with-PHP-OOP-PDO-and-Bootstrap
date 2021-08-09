@@ -11,6 +11,20 @@ class Session{
         }
     } 
     }
+
+    public static function checkSession(){ // logout obosthay jeno index page execute na korte pare tar function
+        if(self::get("login") == false){
+            self::destroy();
+            header("location: login.php");
+        }
+    }
+
+    public static function checkLogin(){ // login obosthay jeno login page execute na korte pare tar function
+        if(self::get("login") == true){
+            
+            header("location: index.php");
+        }
+    }
    
     public static function set($key,$val){
         $_SESSION[$key] = $val; 

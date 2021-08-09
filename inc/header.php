@@ -29,12 +29,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
    
       <ul class="nav navbar-nav navbar-right">
+	  		<?php
+                    $id = Session::get("id");
+                    $userlogin = Session::get("login");
+                    if($userlogin == true){
+         	?>  
+			 <li> <a href="index.php">Home</a></li>  
       		<li>
-      		  <a href="profile.php">Profile</a>
-      	</li>
+      		  <a href="profile.php?id=<?php echo $id; ?>">Profile</a>
+      		</li>
       		<li>
       		  <a href="?action=logout">Logout</a>
       	</li>
+		  <?php }else{ ?>
       	<li>
       		  <a href="register.php" >Register</a>
       	</li>
@@ -42,6 +49,7 @@
         	
         	  <a href="login.php">Login</a>
         </li>
+		<?php } ?>
        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

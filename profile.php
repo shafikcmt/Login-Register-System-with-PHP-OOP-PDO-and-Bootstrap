@@ -1,5 +1,7 @@
 <?php
 	include 'inc/header.php';
+	Session::checkSession();
+
 ?>
 <div class="container">
 		<div class="panel panel-default">
