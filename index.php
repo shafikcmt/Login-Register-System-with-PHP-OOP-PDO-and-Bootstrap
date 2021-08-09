@@ -1,12 +1,31 @@
 <?php
 	include 'inc/header.php';
 	include 'lib/User.php';
-	// $user = new User();
+	$user = new User();
 ?>
+
 <div class="container">
+<?php 
+$loginmsg = Session::get('loginmsg');
+if(isset($loginmsg))
+{
+	echo $loginmsg;
+}
+Session::set("loginmsg", NULL)
+?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3>User List <span class="pull-right">Wellcome</span><strong>Sofik</strong></h3>
+				<h3>User List <span class="pull-right"><strong>Wellcome!</strong>
+			<?php
+			$name = Session::get('name');
+			if(isset($name))
+			{
+				echo $name;
+			}
+			?>
+			</span>
+			
+			</h3>
 			</div>
 			<div class="panel-body">
 				<table class="table table-striped">
