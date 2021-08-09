@@ -12,7 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="inc/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="inc/style.css">
 </head>
-
+<?php
+    if(isset($_GET['action']) && $_GET['action'] == "logout"){
+        Session::destroy();
+    }
+    ?>
 <body>
 	<div class="container">
 <nav class="navbar navbar-default navbar-default" role="navigation">
@@ -29,7 +33,7 @@
       		  <a href="profile.php">Profile</a>
       	</li>
       		<li>
-      		  <a href="#">Logout</a>
+      		  <a href="?action=logout">Logout</a>
       	</li>
       	<li>
       		  <a href="register.php" >Register</a>

@@ -21,6 +21,11 @@ class Session{
         }else{
             return false;
         }
-    }  
+    } 
+    public static function destroy(){ // create logout process
+        session_destroy();
+        session_unset();
+        header("location: login.php");
+    }    
 }
 ?>
