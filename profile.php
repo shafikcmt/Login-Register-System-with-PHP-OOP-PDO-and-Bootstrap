@@ -25,6 +25,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update']))
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
+							<?php
+							if(isset($updateusr)) {
+								echo $updateusr;
+							}
+                			?>
 						
 						<?php
 							$userdata = $user->getUserById($userid);
@@ -34,11 +39,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update']))
 						<form action="" method="POST">
 							<div class="form-group">
 								<label>Your name</label>
-								<input type="email" name="name" class="form-control"  value="<?php echo $userdata->name; ?>">
+								<input type="text" name="name" class="form-control"  value="<?php echo $userdata->name; ?>">
 							</div>
 							<div class="form-group">
 								<label>Username</label>
-								<input type="email" name="username" class="form-control"  value="<?php echo $userdata->username; ?>">
+								<input type="text" name="username" class="form-control"  value="<?php echo $userdata->username; ?>">
 							</div>
 							<div class="form-group">
 								<label>Email</label>
@@ -51,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update']))
 									$sesid = Session::get("id");
 									if($userid == $sesid){
 								?>
-								<input type="submit" value="Update" class="btn btn-primary">
+								<input type="submit" name="update" value="Update" class="btn btn-primary">
 							</div>
 							<?php } ?>
 						</form>
