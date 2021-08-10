@@ -30,6 +30,8 @@ class User{
 			$msg = "<div class='alert alert-danger'><strong>Error !</strong>The email Address is already Exist </div>";
 			return $msg; 
 		}
+        $password = md5($data['password']);
+
 		$sql = "INSERT INTO table_user(name,username,email,password)VALUE(:name,:username,:email,:password)";
         $query = $this->db->pdo->prepare($sql);
         $query->bindValue(':name',$name);
@@ -71,7 +73,7 @@ class User{
 	public function userLogin($data){
         
         $email      = $data['email'];
-        $password   = $data['password'];
+        $password   = md5($data['password']);
         $chk_email  = $this->emailCheck($email);
         
     if($email == "" || $password == ""){
@@ -145,6 +147,54 @@ class User{
         return $msg;    
         }else{
             $msg = "<div class='alert alert-danger'><strong>Error !</strong>user data not updated! </div>";
+        return $msg; 
+        }
+    }
+    public function checkPassword($id,$old_pass){
+        $password = md5($old_pass);
+        $sql = "SELECT password FROM table_user WHERE id = :id AND password = :password";
+        $query = $this->db->pdo->prepare($sql);
+        $query->bindValue(':id',$id);
+        $query->bindValue(':password',$password);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function updatePassword($id,$data){
+        $old_pass = $data['old_pass'];
+        $new_pass = $data['password'];
+        $chk_pass = $this->checkPassword($id,$old_pass);
+         if($old_pass == "" || $new_pass == ""){
+       $msg = "<div class='alert alert-danger'><strong>Error !</strong>Filed Must not be empty !</div>";
+        return $msg;
+    }
+        
+        if($chk_pass == false){
+            $msg = "<div class='alert alert-danger'><strong>Error !</strong>Old Password is not Correct!</div>";
+        return $msg;
+        }
+        if(strlen($new_pass) < 6){
+           $msg = "<div class='alert alert-danger'><strong>Error !</strong> Password is too small!</div>";
+        return $msg; 
+        }
+        $password = md5($new_pass);
+        $sql = "UPDATE table_user set
+        password    = :password
+        WHERE id    = :id";
+        $query = $this->db->pdo->prepare($sql);
+        $query->bindValue(':password',$password);
+        $query->bindValue(':id',$id);
+       
+        $result = $query->execute();
+        if($result)
+        {
+        $msg = "<div class='alert alert-success'><strong>Success !</strong>Thank you, password Updated Successfully! </div>";
+        return $msg;    
+        }else{
+            $msg = "<div class='alert alert-danger'><strong>Error !</strong>password not updated! </div>";
         return $msg; 
         }
     }

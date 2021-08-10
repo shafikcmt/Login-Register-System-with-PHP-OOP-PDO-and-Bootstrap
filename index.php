@@ -1,7 +1,7 @@
 <?php
 	include 'lib/User.php';
 	include 'inc/header.php';
-	Session::checkSession();
+	// Session::checkSession();
 	$user = new User();
 ?>
 

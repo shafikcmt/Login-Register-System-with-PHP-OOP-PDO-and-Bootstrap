@@ -1,7 +1,7 @@
 <?php
-	include 'lib/User.php';
 	include 'inc/header.php';
-	Session::checkSession();
+	include 'lib/User.php';
+	// Session::checkSession();
 
 ?>
 
@@ -57,6 +57,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update']))
 									if($userid == $sesid){
 								?>
 								<input type="submit" name="update" value="Update" class="btn btn-primary">
+								<a class="btn btn-info" href="changepass.php?id=<?php echo $userid; ?>">Password Change</a>
 							</div>
 							<?php } ?>
 						</form>
